@@ -15,7 +15,7 @@ def charge_review(filename):
               difference = "underpaid"
             elif expected_amount < amount_charged:
               difference = "overpaid"
-            print(f"Line {record} {name} paid ${amount_charged}, expected ${expected_amount:.2f}.\n {name} has {difference} for their melons")
+            print(f"Line {record}: received ${amount_charged}, expected ${expected_amount:.2f}.\n {name} has {difference} for their melons")
   order_log.close()
 
 charge_review("customer-orders.txt")
