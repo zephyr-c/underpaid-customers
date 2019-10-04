@@ -1,6 +1,16 @@
-melon_cost = 1.00
+melon_cost = 1.00 #sets melon cost as constant. If melon cost changes will only have to update in one place.
 
 def charge_review(filename):
+  """ Prints out data for new customers who have underpaid on their melons. Shows line in log file as well as name.
+
+  Takes a file name as an argument and handles the file inside the function, so can be used with any future order log files.
+  Splits each line of file into a list based on the '|' character
+  Stores items in new list as variables for manipulation
+  Calculates expected charge based on number of melons bought and melon cost
+  Compares amount expected to what was actually paid, if not match assigns a variable whether under or overpaid
+  Prints out line in file where discrepancy occurred and amounts
+  Prints new line with customer name and whether they have over or underpaid.
+  """
   order_log = open(filename)
   for line in order_log:
         line = line.rstrip()
